@@ -9,6 +9,7 @@ import { MotsCroisesComponent } from './mots-croises/mots-croises.component';
 import { EchecsComponent } from './echecs/echecs.component';
 import { BatailleNavaleComponent } from './bataille-navale/bataille-navale.component';
 import { DamesComponent } from './dames/dames.component';
+import { TimeBombComponent } from './time-bomb/time-bomb.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DamesComponent } from './dames/dames.component';
     MotsCroisesComponent,
     EchecsComponent,
     BatailleNavaleComponent,
-    DamesComponent
+    DamesComponent,
+    TimeBombComponent
   ],
   imports: [
     BrowserModule,
