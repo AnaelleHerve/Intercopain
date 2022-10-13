@@ -8,11 +8,13 @@ export class Square {
 	jump: boolean = false; // Says whether a piece was jumped when moving here
 	row: number;
 	col: number;
+    green:boolean=true
 
 	constructor(play: boolean, r: number, c: number) {
 		this.playable = play;
 		this.row = r;
 		this.col = c;
+        this.green=(r+c)%2==0;
 	}
 
 	// Add piece to square

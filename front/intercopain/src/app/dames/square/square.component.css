@@ -3,10 +3,10 @@
 	width: 100%;
 	border: 1px solid #27802B;
 }
-.playable {
+.green {
 	background-color: #27802B;
 }
-.notplayable {
+.white {
 	background-color: #FDFFD3;
 }
 .highlight {
