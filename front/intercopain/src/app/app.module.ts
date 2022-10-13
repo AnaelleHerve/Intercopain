@@ -9,6 +9,10 @@ import { MotsCroisesComponent } from './mots-croises/mots-croises.component';
 import { EchecsComponent } from './echecs/echecs.component';
 import { BatailleNavaleComponent } from './bataille-navale/bataille-navale.component';
 import { DamesComponent } from './dames/dames.component';
+import { PawnComponent } from './dames/pawn/pawn.component';
+import { BoardComponent } from './dames/board/board.component';
+import { SquareComponent } from './dames/square/square.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +22,10 @@ import { DamesComponent } from './dames/dames.component';
     MotsCroisesComponent,
     EchecsComponent,
     BatailleNavaleComponent,
-    DamesComponent
+    DamesComponent,
+    PawnComponent,
+    BoardComponent,
+    SquareComponent,
   ],
   imports: [
     BrowserModule,

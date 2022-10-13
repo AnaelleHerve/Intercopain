@@ -1,0 +1,14 @@
+.board {
+    display: grid;
+    grid-auto-flow: column;
+	height: 500px;
+	width: 500px;
+}
+
+
+@media only screen and (max-width: 768px) {
+	.board {
+		height: 300px;
+		width: 300px;
+	}
+}
