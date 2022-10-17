@@ -1,5 +1,5 @@
 <div class="board">
-    <div *ngFor="let row of board" >
+    <div class="col" *ngFor="let row of board" >
       <square *ngFor="let square of row"
       [square] = "square">
       </square>
