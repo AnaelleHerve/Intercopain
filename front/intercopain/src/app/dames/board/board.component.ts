@@ -5,13 +5,12 @@ import { SquareComponent }  from '../square/square.component';
 @Component({
   selector: 'board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css']
+  styleUrls: ['./board.component.css'],
 })
 export class BoardComponent implements OnInit {
   public board: any;
-  private service= new GameService
-
-  constructor(
+  
+  constructor(private service:GameService
       
   ) {}
 

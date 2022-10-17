@@ -1,14 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Square } from './square';
-
+import { GameService } from '../game.services';
 @Component({
   selector: 'square',
   templateUrl: './square.component.html',
-  styleUrls: ['./square.component.css']
+  styleUrls: ['./square.component.css'],
 })
 export class SquareComponent {
-	@Input() square: Square;
+	@Input()
+  square!: Square;
 
-	constructor(
+	constructor(public service: GameService
   	) {}
 }

@@ -1,5 +1,5 @@
 <div class="square" [class.green]="square.green" [class.white]="!square.green" [class.highlight]="square.highlight">
-    <div class=expend *ngIf="square.piece" >
+    <div class=expend *ngIf="square.piece" (click)="service.clickAPiece(square.piece)">
         <div class=expend *ngIf="square.piece.type ==='pawn'">
             <pawn [pawn]="square.piece"></pawn>
         </div>

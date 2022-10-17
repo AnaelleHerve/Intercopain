@@ -12,7 +12,7 @@ import { DamesComponent } from './dames/dames.component';
 import { PawnComponent } from './dames/pawn/pawn.component';
 import { BoardComponent } from './dames/board/board.component';
 import { SquareComponent } from './dames/square/square.component';
-
+import { GameService } from './dames/game.services';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { SquareComponent } from './dames/square/square.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
