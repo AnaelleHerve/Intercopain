@@ -10,7 +10,7 @@ import { SquareComponent }  from '../square/square.component';
 export class BoardComponent implements OnInit {
   public board: any;
   
-  constructor(private service:GameService
+  constructor(private gameService:GameService
       
   ) {}
 
@@ -21,8 +21,8 @@ export class BoardComponent implements OnInit {
   }
 
   onReset() {
-      this.service.resetGame();
-      this.board = this.service.board;
+      this.gameService.resetGame();
+      this.board = this.gameService.board;
       console.log(this.board);
   }
 }

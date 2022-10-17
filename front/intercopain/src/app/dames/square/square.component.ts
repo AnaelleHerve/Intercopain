@@ -10,6 +10,6 @@ export class SquareComponent {
 	@Input()
   square!: Square;
 
-	constructor(public service: GameService
+	constructor(public gameService: GameService
   	) {}
 }
