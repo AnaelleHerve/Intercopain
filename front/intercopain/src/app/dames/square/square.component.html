@@ -3,6 +3,9 @@
         <div class=expend *ngIf="square.piece.type ==='pawn'">
             <pawn [pawn]="square.piece"></pawn>
         </div>
+        <div class=expend *ngIf="square.piece.type ==='king'">
+            <king [king]="square.piece"></king>
+        </div>
     </div>
     <div *ngIf="square.playable && !square.piece"
 		style="width: 100%; height: 100%"

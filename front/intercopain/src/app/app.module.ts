@@ -13,6 +13,7 @@ import { PawnComponent } from './dames/pawn/pawn.component';
 import { BoardComponent } from './dames/board/board.component';
 import { SquareComponent } from './dames/square/square.component';
 import { GameService } from './dames/game.services';
+import { KingComponent } from './dames/king/king.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GameService } from './dames/game.services';
     PawnComponent,
     BoardComponent,
     SquareComponent,
+    KingComponent,
   ],
   imports: [
     BrowserModule,
