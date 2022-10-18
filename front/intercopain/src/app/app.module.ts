@@ -14,6 +14,7 @@ import { BoardComponent } from './dames/board/board.component';
 import { SquareComponent } from './dames/square/square.component';
 import { GameService } from './dames/game.services';
 import { KingComponent } from './dames/king/king.component';
+import { ConsoleComponent } from './dames/console/console.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { KingComponent } from './dames/king/king.component';
     BoardComponent,
     SquareComponent,
     KingComponent,
+    ConsoleComponent,
   ],
   imports: [
     BrowserModule,

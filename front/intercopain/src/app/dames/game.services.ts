@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Piece, Pawn, King } from './piece';
 import { Square } from './square/square';
 import { Board } from './board/board';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class GameService {
@@ -9,13 +10,26 @@ export class GameService {
     private _selectedPiece: any = null;
     private _redTurn: boolean = true;
     private _doubleJump: boolean = false;
+
+    // Behavior Subjects
+    private _redTurnBeh: BehaviorSubject<boolean>;
+    private _resetGame: BehaviorSubject<boolean>;
+    private _isWinner: BehaviorSubject<string>;
+
     constructor() {
+        this._redTurnBeh = <BehaviorSubject<boolean>>new BehaviorSubject(true);
+        this._resetGame = <BehaviorSubject<boolean>>new BehaviorSubject(true);
+        this._isWinner = <BehaviorSubject<string>>new BehaviorSubject("none");
         this.resetGame();
     }
 
     // Resets game back to beginning
     resetGame() {
+        console.log("resetGame")
         this.board = new Board().board;
+        this._redTurn = true;
+        this.loadResetGame(false);
+        this.loadIsWinner("none");
 
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 8; j++) {
@@ -32,6 +46,90 @@ export class GameService {
             }
         }
     }
+
+// Observable stuff
+
+    // Loading the behavior subjects (which turn into observables)
+
+    loadRedTurn(turn: boolean) {
+        this._redTurnBeh.next(turn);
+    }
+
+    loadResetGame(reset: boolean) {
+        this._resetGame.next(reset);
+    }
+
+    loadIsWinner(winner: string) {
+        this._isWinner.next(winner);
+    }
+
+    // Getting the observables or behavior subjects for other components
+
+    get redTurnObs() {
+        return this._redTurnBeh.asObservable();
+    }
+
+    // For Game Console
+    get resetGameBeh() {
+        return this._resetGame; 
+    }
+
+    // For Game Board
+    get resetGameObs() {
+        return this._resetGame.asObservable();
+    }
+
+    // For Game Board
+    get isWinnerObs() {
+        return this._isWinner.asObservable();
+    }
+
+    // Determining if someone won the game
+    isWinner(turn: boolean) {
+        let redTeam: Piece[] = [];
+        let blackTeam: Piece[] = [];
+        let winner: boolean = true;
+        
+        // Collecting the pieces on the board into arrays
+        this.board.forEach((row: any[]) => {
+            row.forEach((space: { piece: Piece | null; }) => {
+                if (space.piece !== null) {
+                    if (space.piece.isRed) {
+                        redTeam.push(space.piece);
+                    } else {
+                        blackTeam.push(space.piece);
+                    }
+                }
+            });
+        });
+
+        // Check each team to see if someone won
+        if (turn) { // red turn
+            redTeam.forEach(piece => {
+                if (this.canMove(piece)) { // if any piece can move then no winner
+                    winner = false;
+                }
+            });
+        } else { // black turn
+            blackTeam.forEach(piece => {
+                if (this.canMove(piece)) { // if any piece can move then no winner
+                    winner = false;
+                }
+            });
+        }
+
+        if (winner) {
+            let win = "none";
+            if (turn) {
+                win = "Black";
+            } else {
+                win = "Red";
+            }
+            this.loadIsWinner(win);
+        }
+    }
+
+
     // Click events for pieces and squares
 
     // Click on a piece on the board
@@ -64,10 +162,10 @@ export class GameService {
             }
             if (sp.jump === false || !this.checkForJump(sp)) { // if I didn't just jump or there is no jump
                 this._redTurn = !this._redTurn;
-                //this.loadRedTurn(this._redTurn);
+                this.loadRedTurn(this._redTurn);
                 this._doubleJump = false;
                 this.clearSelections();
-                //this.isWinner(this._redTurn);
+                this.isWinner(this._redTurn);
             } else { // double jump opportunity
                 this._doubleJump = true;
                 this.clickAPiece(this._selectedPiece);
