@@ -1,0 +1,17 @@
+.board {
+	display: grid;
+    grid-auto-flow: column;
+	height: 600px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.col {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+
+

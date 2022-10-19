@@ -9,6 +9,12 @@ import { MotsCroisesComponent } from './mots-croises/mots-croises.component';
 import { EchecsComponent } from './echecs/echecs.component';
 import { BatailleNavaleComponent } from './bataille-navale/bataille-navale.component';
 import { DamesComponent } from './dames/dames.component';
+import { PawnComponent } from './dames/pawn/pawn.component';
+import { BoardComponent } from './dames/board/board.component';
+import { SquareComponent } from './dames/square/square.component';
+import { GameService } from './dames/game.services';
+import { KingComponent } from './dames/king/king.component';
+import { ConsoleComponent } from './dames/console/console.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +24,18 @@ import { DamesComponent } from './dames/dames.component';
     MotsCroisesComponent,
     EchecsComponent,
     BatailleNavaleComponent,
-    DamesComponent
+    DamesComponent,
+    PawnComponent,
+    BoardComponent,
+    SquareComponent,
+    KingComponent,
+    ConsoleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

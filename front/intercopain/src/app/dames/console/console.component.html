@@ -1,0 +1,11 @@
+<div>
+    <div class="game-state">
+        <h1 *ngIf="this.winner === 'Red'" style="color: red">Victoire des Rouges</h1>
+        <h2 *ngIf="this.winner === 'Black'">Victoire des Noirs</h2>
+        <h2 *ngIf="this.turn === 'Red' && this.winner === 'none'" style="color: red">Trait aux Rouges</h2>
+        <h2 *ngIf="this.turn === 'Black' && this.winner === 'none'">Trait aux Noirs</h2>
+    </div>
+    <div class="reseting-button">
+        <button (click)="resetGame()">Nouvelle Partie</button>
+    </div>
+</div>
