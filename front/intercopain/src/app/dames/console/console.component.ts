@@ -10,10 +10,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ConsoleComponent implements OnInit {
   public turn: any = null;
-
+  public winner:any =null;
 	// Observables
 	public redTurn$!: Observable<boolean>;
-
+  public isWinner$!: Observable<string>;
 	// Behavior Subjects
 	public _resetGame!: BehaviorSubject<boolean>;
 
@@ -24,7 +24,12 @@ export class ConsoleComponent implements OnInit {
 		this.redTurn$ = this.gameService.redTurnObs;
 		this.redTurn$.subscribe(redTurn => {
 			this.turn = redTurn ? 'Red' : 'Black';
-		});
+		})
+    this.isWinner$=this.gameService.isWinnerObs;
+    this.isWinner$.subscribe(winner=>{
+      this.winner=winner;
+    })
+    ;
 
 		// Behavior Subjects
 		this._resetGame = this.gameService.resetGameBeh;

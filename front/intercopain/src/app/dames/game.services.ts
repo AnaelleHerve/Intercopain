@@ -126,6 +126,7 @@ export class GameService {
                 win = "Red";
             }
             this.loadIsWinner(win);
+            console.log(win)
         }
     }
 
