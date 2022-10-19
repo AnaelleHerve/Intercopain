@@ -1,5 +1,10 @@
 .app-container {
-	height: 40vmax;
+	display: flex;
+	justify-content: space-evenly;
 }
 
-
+.console{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
