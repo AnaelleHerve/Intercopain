@@ -25,7 +25,6 @@ export class GameService {
 
     // Resets game back to beginning
     resetGame() {
-        console.log("resetGame")
         this.board = new Board().board;
         this._redTurn = true;
         this.loadResetGame(false);
@@ -126,7 +125,6 @@ export class GameService {
                 win = "Red";
             }
             this.loadIsWinner(win);
-            console.log(win)
         }
     }
 
