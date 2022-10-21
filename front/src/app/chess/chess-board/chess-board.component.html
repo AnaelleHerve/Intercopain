@@ -1,0 +1,7 @@
+<div class="chessboard">
+    <div class="col" *ngFor="let row of chessBoard" >
+      <chess-square *ngFor="let square of row"
+      [chessSquare] = "square">
+      </chess-square>
+  </div>
+</div>

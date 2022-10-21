@@ -1,0 +1,22 @@
+<div class="square" [class.black]="chessSquare.black" [class.white]="!chessSquare.black" [class.highlight]="chessSquare.highlight">
+    <div class=expend *ngIf="chessSquare.chessPiece">
+        <div class=expend *ngIf="chessSquare.chessPiece.type ==='pawn'">
+            <chess-pawn [chessPawn]="chessSquare.chessPiece"></chess-pawn>
+        </div>
+        <div class=expend *ngIf="chessSquare.chessPiece.type ==='rock'">
+            <chess-rock [chessRock]="chessSquare.chessPiece"></chess-rock>
+        </div>
+        <div class=expend *ngIf="chessSquare.chessPiece.type ==='knight'">
+            <chess-knight [chessKnight]="chessSquare.chessPiece"></chess-knight>
+        </div>
+        <div class=expend *ngIf="chessSquare.chessPiece.type ==='bishop'">
+            <chess-bishop [chessBishop]="chessSquare.chessPiece"></chess-bishop>
+        </div>
+        <div class=expend *ngIf="chessSquare.chessPiece.type ==='king'">
+            <chess-king [chessKing]="chessSquare.chessPiece"></chess-king>
+        </div>
+        <div class=expend *ngIf="chessSquare.chessPiece.type ==='queen'">
+            <chess-queen [chessQueen]="chessSquare.chessPiece"></chess-queen>
+        </div>
+    </div>
+</div>
