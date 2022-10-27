@@ -1,0 +1,16 @@
+<div>
+  <form>
+    <label>Pseudo</label><br />
+    <input id="pseudoInput" name="pseudo" type="pseudo" /><br />
+    <!-- [(ngModel)]="pseudo" -->
+    <button (click)="onSubmitPseudo()">Rejoindre la partie</button>
+  </form>
+</div>
+
+<!-- <div *ngFor="let p of players">
+  <h1>{{ p.pseudo }}</h1>
+</div> -->
+
+<div *ngIf="player && player.id == 1">
+  <button (click)="joinParty()">Lancer la partie</button>
+</div>

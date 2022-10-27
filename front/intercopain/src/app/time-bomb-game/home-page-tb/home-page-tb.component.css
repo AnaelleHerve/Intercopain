@@ -1,0 +1,18 @@
+div {
+  text-align: center;
+}
+
+button {
+  font-size: 30px;
+}
+
+form {
+  text-align: center;
+  margin: 50px;
+  font-size: 20px;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}

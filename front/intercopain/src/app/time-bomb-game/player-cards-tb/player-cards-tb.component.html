@@ -1,0 +1,12 @@
+<div>
+  <h1>Vos cartes :</h1>
+  <div>
+    <img
+      *ngFor="let c of players[0].cards"
+      src="assets\cartes time bomb\{{ c.source }}"
+    />
+  </div>
+</div>
+<div>
+  <button (click)="returnButton()">Retour</button>
+</div>

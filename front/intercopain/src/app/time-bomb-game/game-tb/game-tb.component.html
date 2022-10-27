@@ -1,0 +1,28 @@
+<div style="text-align: left">
+  <button (click)="roleButton()">Voir mon rôle</button>
+  <br />
+  <button (click)="cardsButton()">Voir mes cartes</button>
+</div>
+
+<table>
+  <tbody>
+    <td *ngFor="let p of players; let i = index">
+      <h1>{{ players[i].pseudo }}</h1>
+      <div class="card" *ngFor="let round of players[0].cards; let j = index">
+        <button
+          class="rotation90 buttonCard"
+          [disabled]="!activeButton || !players[i].cards[j].active"
+          (click)="onClickCard(i, j)"
+        >
+          <img src="assets\cartes time bomb\{{ players[i].cards[j].source }}" />
+        </button>
+      </div>
+    </td>
+  </tbody>
+</table>
+
+<div>
+  <button [disabled]="clickCount !== players.length" (click)="nextRound()">
+    Passer au tour suivant
+  </button>
+</div>
