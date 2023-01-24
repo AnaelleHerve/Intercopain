@@ -1,0 +1,19 @@
+<div id="container">
+  <button mat-button mat-dialog-close id="closeButton">
+    <img src="assets/close.png" width="50px" />
+  </button>
+
+  <h2 mat-dialog-title id="titre">Rejoindre la partie : {{ gameName }}</h2>
+  <p>Veuillez rentrer votre pseudo pour le jeu</p>
+
+  <form>
+    <label for="userName">Pseudo</label><br />
+    <input
+      id="userName"
+      type="text"
+      name="userName"
+      [(ngModel)]="userName"
+    /><br />
+    <button type="button" (click)="joinGame()">Rejoindre la partie</button>
+  </form>
+</div>

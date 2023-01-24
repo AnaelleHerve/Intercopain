@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TimeBombService } from './time-bomb-service';
+import { TimeBombService } from '../services/time-bomb-service';
 
 describe('TimeBombService', () => {
   let service: TimeBombService;

@@ -1,0 +1,23 @@
+<div id="container">
+  <h2 mat-dialog-title id="titre">Créer une partie</h2>
+  <div mat-dialog-close id="closeButton">
+    <img src="assets/close.png" width="30px" />
+  </div>
+  <form>
+    <label for="gameName">Nom de la partie</label><br />
+    <input
+      id="gameName"
+      type="text"
+      name="gameName"
+      [(ngModel)]="gameName"
+    /><br />
+    <label for="userName">Pseudo</label><br />
+    <input
+      id="userName"
+      type="text"
+      name="userName"
+      [(ngModel)]="userName"
+    /><br />
+    <button type="button" (click)="createGame()">Créer</button>
+  </form>
+</div>

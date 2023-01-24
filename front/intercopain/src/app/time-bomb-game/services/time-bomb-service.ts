@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Player } from './models/PlayerObject/player';
-import { Party } from './models/PartyObject/party';
-import { Card } from './models/CardObject/card';
+import { Player } from '../models/PlayerObject/player';
+import { Party } from '../models/PartyObject/party';
+import { Card } from '../models/CardObject/card';
 
 @Injectable({
   providedIn: 'root',

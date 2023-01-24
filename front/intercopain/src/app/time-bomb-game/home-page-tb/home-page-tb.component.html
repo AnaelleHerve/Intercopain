@@ -1,16 +1,29 @@
 <div>
-  <form>
-    <label>Pseudo</label><br />
-    <input id="pseudoInput" name="pseudo" type="pseudo" /><br />
-    <!-- [(ngModel)]="pseudo" -->
-    <button (click)="onSubmitPseudo()">Rejoindre la partie</button>
-  </form>
+  <h1>Parties à rejoindre</h1>
+  <table>
+    <thead>
+      <th>Id de la partie</th>
+      <th>Nom de la partie</th>
+      <th>Joueurs</th>
+      <th>Rejoindre</th>
+    </thead>
+    <tbody *ngFor="let game of list; let i = index">
+      <tr>
+        <td>{{ game[2] }}</td>
+        <td>{{ game[0] }}</td>
+        <td>{{ game[1] }}</td>
+        <td>
+          <button id="join" (click)="openDialogJoinParty(game[0], game[2])">
+            <img src="assets\rejoindre.png" width="50px" />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<!-- <div *ngFor="let p of players">
-  <h1>{{ p.pseudo }}</h1>
-</div> -->
-
-<div *ngIf="player && player.id == 1">
-  <button (click)="joinParty()">Lancer la partie</button>
+<div>
+  <button id="create" (click)="openDialogPartyCreation()">
+    Créer une partie
+  </button>
 </div>

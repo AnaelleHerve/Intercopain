@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TimeBombService } from '../time-bomb-service';
+import { TimeBombService } from '../services/time-bomb-service';
 import { Player } from '../models/PlayerObject/player';
 import { Party } from '../models/PartyObject/party';
 import { Router } from '@angular/router';
