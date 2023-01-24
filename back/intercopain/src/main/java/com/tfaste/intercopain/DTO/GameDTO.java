@@ -1,4 +1,4 @@
-package DTO;
+package com.tfaste.intercopain.DTO;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -19,7 +19,7 @@ public class Card {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long cardId;
 	
 	@Enumerated(EnumType.STRING)
 	private Kind kind;

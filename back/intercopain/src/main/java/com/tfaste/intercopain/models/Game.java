@@ -1,12 +1,10 @@
 package com.tfaste.intercopain.models;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import java.util.ArrayList;
+
+import javax.persistence.*;
+
+// import org.springframework.ldap.odm.annotations.Entry;
 
 import com.tfaste.intercopain.enums.GameStatus;
 
@@ -14,30 +12,37 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Table(name="Game")
 @Getter
 @Setter
+
 public class Game {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@Column(name="Id_game")
+	private Integer gameId ;
 	
-	private String name;
+	@Column(name="Name")
+	private String gameName ;
 	
-	private Integer round;
+	@Column(name="Actual_round")
+	private Integer round = 0;
 	
+	@Column(name="Nb_players")
 	private Integer nbPlayers;
-	
-	private Integer slotsFilled;
-	
+		
 	@Enumerated(EnumType.STRING)
-	private GameStatus gameStatus;
+	@Column(name="Game_status")
+	private GameStatus gameStatus = GameStatus.NOT_STARTED;
 	
-	@ManyToOne
-	private Player[] players;
-	
-	public void addPlayer(Player player) {
-		players[slotsFilled-1]=player;
-		slotsFilled+=1;
-	}
+	// @Column(name="Players")
+	// private Player[] players = new Player[8];
+	// ArrayList<Player> players = new ArrayList<>() ;
+
+
+	// public void addPlayer(Game game, Player player){
+	// 	game.players.add(player) ;
+	// }
 }
+

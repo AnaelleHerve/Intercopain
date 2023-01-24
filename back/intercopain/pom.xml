@@ -54,6 +54,27 @@
 	        <artifactId>lombok</artifactId>
 	        <scope>provided</scope>
     	</dependency>
+    	<dependency>
+    		<groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <scope>runtime</scope>
+ 		</dependency>
+
+    	<!-- <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>4.1.4.Final</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.6.0.Final</version>
+		</dependency> 
+		<!-- <dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency> -->
 	</dependencies>
 
 	<build>
@@ -65,4 +86,4 @@
 		</plugins>
 	</build>
 
-</project>
+</project> 

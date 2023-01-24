@@ -1,4 +1,4 @@
-package repository;
+package com.tfaste.intercopain.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
