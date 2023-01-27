@@ -25,7 +25,7 @@ public class Player {
 	private Long playerId;
 	
 	@Column(name="Cards")
-	private Card[] cards;
+	private String[] cards;
 	
 	@Column(name="Name")
 	private String playerName;

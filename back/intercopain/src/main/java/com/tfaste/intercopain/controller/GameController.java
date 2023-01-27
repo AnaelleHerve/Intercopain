@@ -68,4 +68,9 @@ public class GameController {
 		playerService.joinGame(gameId, playerName);
 	}
 
+
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String[] test() {
+		return gameService. repartitionCardsGame(8);
+	}
 }
